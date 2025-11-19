@@ -1,13 +1,13 @@
-import { router } from "expo-router";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Redirect } from "expo-router";
 
 export default function App() {
-  return (
-    <View>
-      <Text>Hello, world!</Text>
-      <TouchableOpacity onPress={() => router.push("login")}>
-        <Text className="text-red-400">Go to Login</Text>
-      </TouchableOpacity>
-    </View>
-  );
+  const userData = {
+    token: "asasasas",
+    name: "Bruno",
+  };
+  if (userData) {
+    return <Redirect href="/(private)/home" />;
+  }
+
+  return <Redirect href="/login" />;
 }
