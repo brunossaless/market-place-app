@@ -1,9 +1,7 @@
-import { Text, View } from "react-native";
+import { RegisterView } from "../viewModels/Register/Register.view";
+import { useRegisterViewModel } from "../viewModels/Register/useRegister.view.Model";
 
 export default function Register() {
-  return (
-    <View className="flex-1 items-center justify-center">
-      <Text>Register Page</Text>
-    </View>
-  );
+  const { userDate, setUserDate } = useRegisterViewModel();
+  return <RegisterView userDate={userDate} setUserDate={setUserDate} />;
 }
