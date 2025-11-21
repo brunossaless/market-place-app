@@ -5,7 +5,7 @@ export default function App() {
     token: "asasasas",
     name: "Bruno",
   };
-  if (userData) {
+  if (!userData) {
     return <Redirect href="/(private)/home" />;
   }
 
