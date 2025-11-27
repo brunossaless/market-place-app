@@ -1,4 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
+import { colors } from "../../../styles/colors";
 
 export const appInputVariants = tv({
     slots: {
@@ -10,7 +11,12 @@ export const appInputVariants = tv({
     },
     variants: {
         isFocused: {
-            true: {},
+            true: {
+               wrapper: "border-purple-base",
+               input: "text-purple-base",
+               label: "text-purple-base",
+               error: "text-purple-base",
+            },
         },
         isError: {
             true: {},
