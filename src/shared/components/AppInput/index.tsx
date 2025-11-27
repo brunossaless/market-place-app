@@ -26,7 +26,7 @@ export const AppInput: FC<AppInputProps> = ({ label, leftIcon, containerClassNam
         value,
     });
 
-    const { container, wrapper, input, label: labelStyles } = appInputVariants({
+    const { container, wrapper, input, label: labelStyles, error: errorStyles } = appInputVariants({
         isFocused,
         isError,
         isDisabled,
@@ -60,6 +60,10 @@ export const AppInput: FC<AppInputProps> = ({ label, leftIcon, containerClassNam
                     </TouchableOpacity>
                 )}
             </Pressable>
+            {error && <Text className={errorStyles()}>
+                <Ionicons size={22} name="alert-circle-outline" className="ml-2"  />  {error}
+                
+            </Text>}
         </View>
     );
 }
